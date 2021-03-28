@@ -1,0 +1,83 @@
+version: "3"
+services:
+    #RabbitMQ service
+    rabbitmq4:
+        image: rabbitmq:3-management
+        container_name: rabbitmq5
+        ports:
+            - 15675:15672
+
+    # nginx producer        
+    nginx-producer5:
+        build:
+            context: ./dockerfiles/build/nginx
+            args:
+                user_name: rabbitmq
+                user_id: 1000
+                group_id: 1000
+                app_name: producer
+
+        image: nginx-producer
+        container_name: ngnix-producer5
+        ports:
+            - "106:80"
+        volumes:
+            - ./producer:/home/rabbitmq/producer
+            - ./dockerfiles/conf/nginx/nginx.conf:/etc/nginx/nginx.conf
+        restart: always
+        depends_on:
+            - php-producer5
+
+    # nginx consumer        
+    nginx-consumer5:
+        build:
+            context: ./dockerfiles/build/nginx
+            args:
+                user_name: rabbitmq
+                user_id: 1000
+                group_id: 1000
+                app_name: consumer
+
+        image: nginx-consumer
+        container_name: ngnix-consumer5
+        ports:
+            - "107:80"
+        volumes:
+            - ./consumer:/home/rabbitmq/consumer
+            - ./dockerfiles/conf/nginx/nginx.conf:/etc/nginx/nginx.conf
+        restart: always
+        depends_on:
+            - php-consumer5
+
+    #php producer service
+    php-producer5:
+        build:
+            context: ./dockerfiles/build/php-fpm
+            args:
+                user_name: rabbitmq
+                user_id: 1000
+                group_id: 1000
+                app_name: producer
+        image: php-producer
+        container_name: php-producer5
+        restart: always
+        volumes:
+            - ./producer:/home/rabbitmq/producer
+            - ./dockerfiles/conf/php-fpm/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+
+    #php consumer service
+    php-consumer5:
+        build:
+            context: ./dockerfiles/build/php-fpm
+            args:
+                user_name: rabbitmq
+                user_id: 1000
+                group_id: 1000
+                app_name: consumer
+        image: php-consumer
+        container_name: php-consumer5
+        restart: always
+        volumes:
+            - ./consumer:/home/rabbitmq/consumer
+            - ./dockerfiles/conf/php-fpm/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+
