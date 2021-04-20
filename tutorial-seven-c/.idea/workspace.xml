@@ -14,7 +14,7 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="1386">
               <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
               <folding />
             </state>
@@ -99,11 +99,6 @@
             <path>
               <item name="tutorial-seven-c" type="b2602c69:ProjectViewProjectNode" />
               <item name="tutorial-seven-c" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="consumer" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="tutorial-seven-c" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tutorial-seven-c" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="producer" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -140,11 +135,12 @@
       <updated>1616953708923</updated>
       <workItem from="1616953711151" duration="2925000" />
       <workItem from="1616972274670" duration="3014000" />
+      <workItem from="1617113761925" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5939000" />
+    <option name="totallyTimeSpent" value="5945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="743" extended-state="6" />
@@ -181,6 +177,32 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/worker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/producer/new_task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#54#101#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -208,7 +230,7 @@
     <entry file="file://$PROJECT_DIR$/producer/rpc_client.php" />
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
+        <state relative-caret-position="1386">
           <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
           <folding />
         </state>

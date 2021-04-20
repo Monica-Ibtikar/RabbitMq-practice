@@ -8,6 +8,7 @@ $channel = $connection->channel();
 
 $channel->exchange_declare('logs', 'fanout', false, false, false);
 
+//queue_name = amq.gen-JzTY20BRgKO-HjmUJj0wLg
 list($queue_name, ,) = $channel->queue_declare("", false, false, true, false); // exclusive true to be deleted after connection closes
 
 $channel->queue_bind($queue_name, 'logs');

@@ -6,12 +6,13 @@ use PhpAmqpLib\Message\AMQPMessage;
 
 $connection = new AMQPStreamConnection('rabbitmq7b', 5672, 'guest', 'guest');
 $channel = $connection->channel();
+$channel->confirm_select();
 
 $channel->queue_declare('task_queue', false, true, false, false);
 
-$batch_size = 20;
+$batch_size = 100;
 $outstanding_message_count = 0;
-$messagesCount = 2;
+$messagesCount = 200;
 
 while ($messagesCount > 0) {
     $data = "Hello World!";
